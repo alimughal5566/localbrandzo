@@ -21,7 +21,8 @@
         "mollie/laravel-mollie": "2.0",
         "paypal/rest-api-sdk-php": "^1.14",
         "razorpay/razorpay": "2.*",
-        "yajra/laravel-datatables-oracle": "^8.13"
+        "yajra/laravel-datatables-oracle": "^8.13",
+        "ext-gd": "*"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

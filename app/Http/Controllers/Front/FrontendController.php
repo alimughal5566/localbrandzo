@@ -144,11 +144,11 @@ class FrontendController extends Controller
             function($q){
                 return $q->where('product_type','=', 'normal');
             })->orderBy('id','desc')->take(8)->get();
-
+        $partners = DB::table('partners')->get();
         $ps = DB::table('pagesettings')->find(1);
 
 
-        return view('front.index',compact('ps','sliders','services','top_small_banners','feature_products','latest_products'));
+        return view('front.index',compact('ps','sliders','services','top_small_banners','feature_products','latest_products','partners'));
     }
 
     public function extraIndex()
@@ -549,7 +549,10 @@ class FrontendController extends Controller
             imagesetpixel($image,rand()%200,rand()%50,$pixel);
         }
 
-        $font = $actual_path.'assets/front/fonts/NotoSans-Bold.ttf';
+
+        $font = $actual_path.'/public/assets/front/fonts/NotoSans-Bold.ttf';
+//        dd($font);
+
         $allowed_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         $length = strlen($allowed_letters);
         $letter = $allowed_letters[rand(0, $length-1)];
@@ -560,6 +563,7 @@ class FrontendController extends Controller
         for ($i = 0; $i< $cap_length;$i++)
         {
             $letter = $allowed_letters[rand(0, $length-1)];
+//            dd($font);
             imagettftext($image, 25, 1, 35+($i*25), 35, $text_color, $font, $letter);
             $word.=$letter;
         }
@@ -569,7 +573,7 @@ class FrontendController extends Controller
             imagesetpixel($image,rand()%200,rand()%50,$pixels);
         }
         session(['captcha_string' => $word]);
-        imagepng($image, $actual_path."assets/images/capcha_code.png");
+        imagepng($image, $actual_path."/public/assets/images/capcha_code.png");
     }
 
 // -------------------------------- CONTACT SECTION ENDS----------------------------------------

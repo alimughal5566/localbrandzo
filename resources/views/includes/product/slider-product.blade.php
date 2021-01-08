@@ -1,4 +1,4 @@
-<a href="{{ route('front.product', $prod->slug) }}" class="item">
+<a href="{{ route('front.product', $prod->slug) }}" class="item border-0 mx-2">
 		<div class="item-img">
 			@if(!empty($prod->features))
 			<div class="sell-area">
