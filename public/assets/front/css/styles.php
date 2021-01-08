@@ -208,8 +208,13 @@ nav .menu li.dropdown.open > a,
   .single-wish .right .stars li i,
   .single-wish .right .store-name i
 {
-    color: <?php echo $color; ?>;
+    color: ;
 }
+.latestcolectsss ul li a.active {
+border-bottom: 2px solid   <?php echo $color; ?> !important;;
+color: <?php echo $color; ?> !important; ;
+}
+
 
 
 .input-field.error,

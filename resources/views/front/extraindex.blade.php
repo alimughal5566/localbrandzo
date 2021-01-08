@@ -1,26 +1,40 @@
 @if($ps->hot_sale == 1)
 
 <!-- Clothing and Apparel Area Start -->
-<section class="product-tab">
+<section class="bg-imgesetting  bg-imgefixed py-5"
+		 style="background-image: url({{asset('assets/images/bg-imges/collection-bg.jpg') }});">
 	<div class="container">
 		<div class="row">
+			<div class="col-12">
+				<div class="text-center">
+					<p class="text-center text-white text-uppercase " style="letter-spacing: 2px;">Winter
+						2020</p>
+					<h2 class="text-white">Latest<br>
+						Collections
+					</h2>
+					<p class="text-white">The following products are the newest and latest products of all
+						Brands which have been launched according to the new fashion.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-lg-12 remove-padding">
-				<div class="section-top">
+				<div class="section-top latestcolectsss">
 {{--					<h2 class="section-title">--}}
 {{--						{{ $langg->lang832 }}--}}
 {{--					</h2>--}}
 					<ul class="nav">
 						<li class="nav-item">
-							<a class="nav-link active" id="pills-tab1-tab" data-toggle="pill" href="#pills-tab1" role="tab" aria-controls="pills-tab1" aria-selected="false">{{ $langg->lang30 }}</a>
+							<a class="nav-link text-white active" id="pills-tab1-tab" data-toggle="pill" href="#pills-tab1" role="tab" aria-controls="pills-tab1" aria-selected="false">{{ $langg->lang30 }}</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="pills-tab2-tab" data-toggle="pill" href="#pills-tab2" role="tab" aria-controls="pills-tab2" aria-selected="true">{{ $langg->lang31 }}</a>
+							<a class="nav-link text-white" id="pills-tab2-tab" data-toggle="pill" href="#pills-tab2" role="tab" aria-controls="pills-tab2" aria-selected="true">{{ $langg->lang31 }}</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="pills-tab3-tab" data-toggle="pill" href="#pills-tab3" role="tab" aria-controls="pills-tab3" aria-selected="false">{{ $langg->lang32 }}</a>
+							<a class="nav-link text-white" id="pills-tab3-tab" data-toggle="pill" href="#pills-tab3" role="tab" aria-controls="pills-tab3" aria-selected="false">{{ $langg->lang32 }}</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="pills-tab4-tab" data-toggle="pill" href="#pills-tab4" role="tab" aria-controls="pills-tab4" aria-selected="false">{{ $langg->lang33 }}</a>
+							<a class="nav-link text-white" id="pills-tab4-tab" data-toggle="pill" href="#pills-tab4" role="tab" aria-controls="pills-tab4" aria-selected="false">{{ $langg->lang33 }}</a>
 						</li>
 					</ul>
 				</div>
@@ -30,7 +44,7 @@
 			<div class="col-lg-12">
 				<div class="tab-content">
 					<div class="tab-pane fade active show" id="pills-tab1" role="tabpanel" aria-labelledby="pills-tab1-tab">
-						<div class="row">
+						<div class="row text-white">
 								@foreach($hot_products as $prod)
 									@include('includes.product.list-product')
 								@endforeach
@@ -125,7 +139,7 @@
 
 	@if($ps->large_banner == 1)
 		<!-- Banner Area One Start -->
-		<section class="banner-section">
+		<section class="banner-section ">
 			<div class="container">
 				@foreach($large_banners->chunk(1) as $chunk)
 					<div class="row">
@@ -220,14 +234,14 @@
 				</div>
 			</div>
 		</div>
-		</div>
+
 	</section>
 	<!-- Clothing and Apparel Area start-->
 @endif
 
-@if($ps->partners == 1)
+{{--@if($ps->partners == 1)
 <!-- Partners Area Start -->
-<section class="brand-section partners">
+<section class="brand-section partners py-5" >
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -256,7 +270,10 @@
 		</div>
 	</section>
 	<!-- Partners Area End -->
-@endif
+@endif--}}
+
+
+
 
 
 

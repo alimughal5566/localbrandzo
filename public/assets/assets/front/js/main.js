@@ -364,6 +364,8 @@ $mainSlider.on('changed.owl.carousel', function(event) {
 
 
 
+
+
     // trending item  slider
     var $hot_new_slider = $('.hot-and-new-item-slider');
 

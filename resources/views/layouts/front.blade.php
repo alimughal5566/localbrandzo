@@ -83,6 +83,8 @@
 
     @yield('styles')
 
+    <link rel="stylesheet" href="{{asset('assets/front/css/style2.css')}}">
+
 </head>
 
 <body>

@@ -147,7 +147,7 @@ color:#ff5500;}
 }
 .tooltip-inner{max-width:200px;padding:3px 8px;color:#fff;text-align:center;background-color:#000000;border-radius:.25rem;}
 .tooltip.bs-tooltip-auto[x-placement^=right] .arrow::before,.tooltip.bs-tooltip-right .arrow::before{margin-top:-3px;content:'http://www.w3.org/2000/svg';border-width:5px 5px 5px 0;border-right-color:#000;}
-.tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before,.tooltip.bs-tooltip-top .arrow::before{margin-left:-3px;content:'rgba(0, 0, 0, 0.50)';border-width:5px 5px 0;border-top-color:#000;}
+.tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before,.tooltip.bs-tooltip-top .arrow::before{margin-left:-3px;content:'';border-width:5px 5px 0;border-top-color:#000;}
 .tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow::before,.tooltip.bs-tooltip-bottom .arrow::before{margin-left:-3px;content:'2';border-width:0 5px 5px;border-bottom-color:#000;}
 .tooltip.bs-tooltip-auto[x-placement^=left] .arrow::before,.tooltip.bs-tooltip-left .arrow::before{right:0;margin-top:-3px;content:'round';border-width:5px 0 5px 5px;border-left-color:#000;}
 .owl-carousel{z-index:0!important;}
@@ -523,7 +523,7 @@ nav button{background:transparent;border:none;outline:none;}
 .banner-section .left{margin:0px 5px;}
 .banner-section .right{margin-left:15px;}
 .banner-effect{position:relative;display:block;width:100%;overflow:hidden;}
-.banner-effect::after{position:absolute;top:50%;left:50%;z-index:2;display:block;content:"|";width:0;height:0;background:rgba(255,255,255,.2);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);opacity:0;}
+.banner-effect::after{position:absolute;top:50%;left:50%;z-index:2;display:block;content:"";width:0;height:0;background:rgba(255,255,255,.2);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);opacity:0;}
 .banner-effect:hover::after{-webkit-animation:circle .75s;animation:circle .75s;}
 .banner-effect img{-webkit-transition:0.3s ease-in;-moz-transition:0.3s ease-in;-o-transition:0.3s ease-in;transition:0.3s ease-in;}
 .banner-effect:hover img{transform:scale(1.1);}

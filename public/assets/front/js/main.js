@@ -330,6 +330,38 @@ $mainSlider.on('changed.owl.carousel', function(event) {
         });
     });
 
+
+        var $trending_slider = $('.baners-item-slider');
+        $trending_slider.owlCarousel({
+            items: 2,
+            // autoplay: true,
+            margin: 0,
+            loop: true,
+            dots: true,
+            nav: true,
+            center: false,
+            autoplayHoverPause: true,
+            navText: [" ", " "],
+            smartSpeed: 800,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                414: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 2
+                },
+                1200: {
+                    items: 2
+                }
+            }
+        });
+
     // trending item  slider
     var $trending_slider = $('.trending-item-slider');
     $trending_slider.owlCarousel({
