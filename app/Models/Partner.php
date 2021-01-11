@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Partner extends Model
 {
-    protected $fillable = ['link','photo'];
+    protected $fillable = ['link','photo','title'];
 
     public $timestamps = false;
 
