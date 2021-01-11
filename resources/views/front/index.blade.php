@@ -76,8 +76,11 @@
                     <div class="row mt-2">
                         @foreach(DB::table('featured_banners')->get() as $data)
                             <div class="col-lg-2 col-md-3 col-sm-6 ">
-                                <a href="{{ $data->link }}" target="_blank" class="banner-effect mb-3 feacture-links-height">
-                                    <img src="{{ $data->photo ? asset('assets/images/featuredbanner/'.$data->photo) : asset('assets/images/noimage.png') }}" class="img-fluid" alt="">
+                                <a href="{{ $data->link }}" target="_blank" class=" mb-3 ">
+                                    <div class="banner-effect feacture-links-height">
+                                        <img src="{{ $data->photo ? asset('assets/images/featuredbanner/'.$data->photo) : asset('assets/images/noimage.png') }}" class="img-fluid" alt="">
+                                    </div>
+                                    <h5 class="text-center text-uppercase catagar text-white mt-2 mb-3">{{ $data->title }}</h5>
                                 </a>
                             </div>
                             @if(!$loop->last)
@@ -222,38 +225,47 @@
 
 
     @endif
+
+
     @if($ps->partners == 1)
         <!-- Partners Area Start -->
-        <section class="brand-section partners py-5" >
+        <section class="brand-section mt-0 partners py-5" style="background: #ebebeb" >
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="section-top">
-                            <h2 class="section-title">
-                                {{ $langg->lang236 }}
-                            </h2>
+                        <div class="text-center ">
+                            <p class="text-center text-uppercase  " style="letter-spacing: 2px;">Latest
+                                Collections 2020</p>
+                            <h2 class="">{{ $langg->lang236 }}</h2>
+                            <p class="">Only branded products are included in all of the following categories.
+                                There are no local products other than the branded products.</p>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-3">
-                    <div class="col-lg-12 padding-decrease">
-                        <div class="brand-slider">
-                            @foreach($partners->chunk(2) as $partner)
-                                <div class="slide-item">
-                                    @foreach($partner as $data)
-                                        <a href="{{ $data->link }}" target="_blank" class="brand">
-                                            <img src="{{ asset('assets/images/partner/'.$data->photo) }}" alt="">
-                                        </a>
-                                    @endforeach
+                {{--                @foreach(DB::table('featured_banners')->get()->chunk(6) as $data1)--}}
+                <div class="row mt-2">
+                    @foreach($partners as $data)
+                        <div class="col-lg-2 col-md-3 col-sm-6">
+                            <a href="{{ $data->link }}" target="_blank" class=" mb-3 ">
+                                <div class="banner-effect text-center brands-padings feacture-links-height">
+                                    <img src="{{ asset('assets/images/partner/'.$data->photo) }}" class="img-fluid" alt="">
                                 </div>
-                            @endforeach
+                                <h5 class="text-center text-uppercase catagar gray-brands-title img-contant-width  mt-2 mb-3">{{$data->title }}</h5>
+                            </a>
                         </div>
-                    </div>
+                        @if(!$loop->last)
+                            <br>
+                        @endif
+                    @endforeach
                 </div>
+
+                {{--                @endforeach--}}
             </div>
         </section>
-        <!-- Partners Area End -->
+        {{-- Slider Botom Banner End --}}
     @endif
+
+
 
     <section class="bg-imgesetting  bg-imgefixed py-5" style="background-image: url({{asset('assets/images/bg-imges/newsletter-bg.jpg') }});">
         <div class="container">

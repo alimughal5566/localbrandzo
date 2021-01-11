@@ -550,7 +550,7 @@ class FrontendController extends Controller
         }
 
 
-        $font = $actual_path.'assets/front/fonts/NotoSans-Bold.ttf';
+        $font = $actual_path.'/public/assets/front/fonts/NotoSans-Bold.ttf';
 //        dd($font);
 
         $allowed_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -573,7 +573,7 @@ class FrontendController extends Controller
             imagesetpixel($image,rand()%200,rand()%50,$pixels);
         }
         session(['captcha_string' => $word]);
-        imagepng($image, $actual_path."assets/images/capcha_code.png");
+        imagepng($image, $actual_path."/public/assets/images/capcha_code.png");
     }
 
 // -------------------------------- CONTACT SECTION ENDS----------------------------------------
