@@ -12,7 +12,6 @@
                       <form id="geniusformdata" action="{{route('admin-partner-update',$data->id)}}" method="POST" enctype="multipart/form-data">
                         {{csrf_field()}}
 
-
                         <div class="row">
                           <div class="col-lg-4">
                             <div class="left-area">
@@ -21,6 +20,17 @@
                           </div>
                           <div class="col-lg-7">
                             <input type="text" class="input-field" name="link" placeholder="{{ __('Link') }}" value="{{$data->link}}">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-lg-4">
+                            <div class="left-area">
+                              <h4 class="heading">{{ __('Title') }} *</h4>
+                            </div>
+                          </div>
+                          <div class="col-lg-7">
+                            <input type="text" class="input-field" name="title" placeholder="{{ __('Title') }}" value="{{$data->title}}">
                           </div>
                         </div>
 
@@ -40,7 +50,6 @@
 
                           </div>
                         </div>
-
 
                         <div class="row">
                           <div class="col-lg-4">

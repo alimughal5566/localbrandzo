@@ -48,6 +48,7 @@ class PartnerController extends Controller
     //*** POST Request
     public function store(Request $request)
     {
+//        dd($request);
         //--- Validation Section
         $rules = [
                'photo'      => 'required|mimes:jpeg,jpg,png,svg',

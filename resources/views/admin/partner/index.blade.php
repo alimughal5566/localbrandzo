@@ -33,6 +33,7 @@
                           <thead>
                             <tr>
                                           <th>{{ __('Featured Photo') }}</th>
+                                          <th>{{ __('Title') }}</th>
                                           <th>{{ __('Link') }}</th>
                                           <th>{{ __('Options') }}</th>
                             </tr>
@@ -121,6 +122,7 @@
                ajax: '{{ route('admin-partner-datatables') }}',
                columns: [
                         { data: 'photo', name: 'photo' , searchable: false, orderable: false},
+                        { data: 'title', name: 'title' },
                         { data: 'link', name: 'link' },
                   { data: 'action', searchable: false, orderable: false }
 

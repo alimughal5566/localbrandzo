@@ -33,6 +33,8 @@
                           <thead>
                             <tr>
                                 <th>Featured Image</th>
+                                <th>Title</th>
+                                <th>Link</th>
                                 <th>Actions</th>
                             </tr>
                           </thead>
@@ -120,8 +122,9 @@
                ajax: '{{ route('admin-featuredbanner-datatables') }}',
                columns: [
                         { data: 'photo', name: 'photo' , searchable: false, orderable: false},
-                  { data: 'action', searchable: false, orderable: false }
-
+                  { data: 'title', name:'title'},
+                  { data: 'link', name:'link'},
+                   { data: 'action', searchable: false, orderable: false },
                      ],
                 language : {
                   processing: '<img src="{{asset('assets/images/'.$gs->admin_loader)}}">'
