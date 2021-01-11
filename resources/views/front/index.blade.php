@@ -236,7 +236,9 @@
                         <div class="text-center ">
                             <p class="text-center text-uppercase  " style="letter-spacing: 2px;">Latest
                                 Collections 2020</p>
-                            <h2 class="">{{ $langg->lang236 }}</h2>
+{{--                            {{ $langg->lang236 }}--}}
+                            <h2 class="">Featured <br>
+                                Categories</h2>
                             <p class="">Only branded products are included in all of the following categories.
                                 There are no local products other than the branded products.</p>
                         </div>
