@@ -1,110 +1,135 @@
-			@if (count($prods) > 0)
-					@foreach ($prods as $key => $prod)
-									<div class="col-lg-4 col-md-4 col-6">
+@if (count($prods) > 0)
+	@foreach ($prods as $key => $prod)
+				<div class="col-lg-4 col-md-4 col-6 mb-2 remove-padding">
 
-											<a href="{{ route('front.product', $prod->slug) }}" class="item">
-													<div class="item-img">
-														@if(!empty($prod->features))
-														<div class="sell-area">
-															@foreach($prod->features as $key => $data1)
-															<span class="sale" style="background-color:{{ $prod->colors[$key] }}">{{ $prod->features[$key] }}</span>
-															@endforeach
-														</div>
-														@endif
-														<img class="img-fluid"
-															src="{{ $prod->photo ? asset('assets/images/thumbnails/'.$prod->thumbnail) : asset('assets/images/noimage.png') }}"
-															alt="">
-													</div>
-													<div class="info">
-														<h5 class="name">{{ $prod->showName() }}</h5>
-														<h4 class="price">{{ $prod->setCurrency() }} <del><small>{{ $prod->showPreviousPrice() }}</small></del></h4>
-														<div class="stars">
-															<div class="ratings">
-																<div class="empty-stars"></div>
-																<div class="full-stars" style="width:{{App\Models\Rating::ratings($prod->id)}}%"></div>
-															</div>
-														</div>
-														<div class="item-cart-area">
-															<ul class="item-cart-options">
-																<li>
-																		@if(Auth::guard('web')->check())
-											
-																		<span href="javascript:;" class="add-to-wish"
-																			data-href="{{ route('user-wishlist-add',$prod->id) }}" data-toggle="tooltip"
-																			data-placement="top" title="{{ $langg->lang54 }}"><i
-																				class="icofont-heart-alt"></i>
+                    <a href="{{ route('front.product', $prod->slug) }}" class="item rounded shadow mx-2 ">
+                        <div class="item-img">
+                            @if(!empty($prod->features))
+                                <div class="sell-area">
+                                    @foreach($prod->features as $key => $data1)
+                                        <span class="sale" style="background-color:{{ $prod->colors[$key] }}">{{ $prod->features[$key] }}</span>
+                                    @endforeach
+                                </div>
+                            @endif
+                            <img class="img-fluid"
+                                 src="{{ $prod->photo ? asset('assets/images/thumbnails/'.$prod->thumbnail):asset('assets/images/noimage.png') }}"
+                                 alt="">
+                        </div>
+						<div class="info">
+							<h5 class="name">{{ $prod->showName() }}</h5>
+							<h4 class="price">{{ $prod->setCurrency() }} <del><small>{{ $prod->showPreviousPrice() }}</small></del></h4>
+							<div class="stars">
+								<div class="ratings">
+									<div class="empty-stars"></div>
+									<div class="full-stars" style="width:{{App\Models\Rating::ratings($prod->id)}}%"></div>
+								</div>
+							</div>
+							<div class="item-cart-area">
+								<ul class="item-cart-options">
+									<li>
+										@if(Auth::guard('web')->check())
+
+											<span href="javascript:;" class="add-to-wish"
+												  data-href="{{ route('user-wishlist-add',$prod->id) }}" data-toggle="tooltip"
+												  data-placement="top" title="{{ $langg->lang54 }}"><i
+														class="icofont-heart-alt"></i>
 																		</span>
-											
-																		@else
-											
-																		<span href="javascript:;" rel-toggle="tooltip" title="{{ $langg->lang54 }}"
-																			data-toggle="modal" id="wish-btn" data-target="#comment-log-reg"
-																			data-placement="top">
+
+										@else
+
+											<span href="javascript:;" rel-toggle="tooltip" title="{{ $langg->lang54 }}"
+												  data-toggle="modal" id="wish-btn" data-target="#comment-log-reg"
+												  data-placement="top">
 																			<i class="icofont-heart-alt"></i>
 																		</span>
-											
-																		@endif
-																</li>
-																<li>
+
+										@endif
+									</li>
+									<li>
 																	<span  class="quick-view" rel-toggle="tooltip" title="{{ $langg->lang55 }}" href="javascript:;" data-href="{{ route('product.quick',$prod->id) }}" data-toggle="modal" data-target="#quickview" data-placement="top">
 																			<i class="fas fa-shopping-basket"></i>
 																	</span>
-																</li>
-																<li>
+									</li>
+									<li>
 																		<span href="javascript:;" class="add-to-compare"
-																		data-href="{{ route('product.compare.add',$prod->id) }}" data-toggle="tooltip"
-																		data-placement="top" title="{{ $langg->lang57 }}" >
+																			  data-href="{{ route('product.compare.add',$prod->id) }}" data-toggle="tooltip"
+																			  data-placement="top" title="{{ $langg->lang57 }}" >
 																		<i class="icofont-exchange"></i>
 																	</span>
-																</li>
-															</ul>
-														</div>
-													</div>
-												</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+                    </a>
 
-									</div>
-				@endforeach
-				<div class="col-lg-12">
-					<div class="page-center mt-5">
-						{!! $prods->appends(['search' => request()->input('search')])->links() !!}
+                </div>
+		{{--***************************************************************************************--}}
+		{{--<div class="col-lg-4 col-md-4 col-sm-6 col-12  ">
+			<a href="{{ route('front.product', $prod->slug) }}">
+				<div class="card border-0 mx-1 my-2 shadow" style="width: 100%">
+					<img src="{{ $prod->photo ? asset('assets/images/thumbnails/'.$prod->thumbnail):asset('assets/images/noimage.png') }}" class="card-img-top rounded" alt="...">
+					<div class="card-body pt-2">
+						<h5 class="font-weight-bold lato-new-font-o">{{ $prod->showName() }}</h5>
+						<h5 class="font-weight-bold danger-color lato-new-font-o">{{ $prod->setCurrency() }}</h5>
+						<div class="d-flex">
+							<div><del class="gray-muted1 opacity-50">{{ $prod->showPreviousPrice() }}</del></div>
+							<div><span class="gray-muted2 font-weight-bold mx-2">-30%</span></div>
+						</div>
+						<div class="stars d-flex justify-content-between">
+							<div class="ratings">
+								<div class="empty-stars"></div>
+								<div class="full-stars" style="width:{{App\Models\Rating::ratings($prod->id)}}%"></div>
+							</div>
+							<div class="pt-2">
+								<small class="lato-new-font-o gray-muted1 mt-3">Pakistan</small>
+							</div>
+						</div>
 					</div>
 				</div>
-			@else
-				<div class="col-lg-12">
-					<div class="page-center">
-						 <h4 class="text-center">{{ $langg->lang60 }}</h4>
-					</div>
-				</div>
-			@endif
+			</a>
+		</div>--}}
+	@endforeach
+	<div class="col-lg-12">
+		<div class="page-center mt-5">
+			{!! $prods->appends(['search' => request()->input('search')])->links() !!}
+		</div>
+	</div>
+@else
+	<div class="col-lg-12">
+		<div class="page-center">
+			<h4 class="text-center">{{ $langg->lang60 }}</h4>
+		</div>
+	</div>
+@endif
 
 
 @if(isset($ajax_check))
 
 
-<script type="text/javascript">
+	<script type="text/javascript">
 
 
-// Tooltip Section
+		// Tooltip Section
 
 
-    $('[data-toggle="tooltip"]').tooltip({
-      });
-      $('[data-toggle="tooltip"]').on('click',function(){
-          $(this).tooltip('hide');
-      });
+		$('[data-toggle="tooltip"]').tooltip({
+		});
+		$('[data-toggle="tooltip"]').on('click',function(){
+			$(this).tooltip('hide');
+		});
 
 
 
 
-      $('[rel-toggle="tooltip"]').tooltip();
+		$('[rel-toggle="tooltip"]').tooltip();
 
-      $('[rel-toggle="tooltip"]').on('click',function(){
-          $(this).tooltip('hide');
-      });
+		$('[rel-toggle="tooltip"]').on('click',function(){
+			$(this).tooltip('hide');
+		});
 
 
-// Tooltip Section Ends
+		// Tooltip Section Ends
 
-</script>
+	</script>
 
 @endif

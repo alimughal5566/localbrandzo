@@ -762,7 +762,7 @@ margin-bottom: 15px;
 
  .top-header ul li.my-dropdown.profilearea .my-dropdown-menu{
     top: 22px;
-    right: 0px;
+     top: 19px;
     left: auto;
     padding: 10px 15px 12px;
     min-width: 150px;
@@ -773,6 +773,9 @@ margin-bottom: 15px;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
+ .profile-dropdown ul li a:hover{
+     color: #e0bd4e;
+ }
 
   .logo-header .search-box .categori-container {
     border-right: 1px solid rgba(0, 0, 0, 0.3);

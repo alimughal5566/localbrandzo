@@ -22,12 +22,35 @@
     color: black !important;;
 }
 
+.border-none {
+    border: none !important;
+}
+
+.border-none:hover {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+select.ssortby {
+    width: 162px;
+    color: #757575;
+    border-radius: 5px;
+    padding: 0px 4px;
+    height: 35px;
+    margin-left: 9px;
+    border: 1px solid black;
+}
+
+.brands-padings {
+    padding: 35px !important;
+}
+
 .feacture-links-height {
     height: 150px;
     width: 150px;
     border-radius: 5px;
     background: white;
-    padding: 8px;
+    /*padding: 8px;*/
     filter: grayscale(1);
     margin: auto;
     border-bottom: 3px solid transparent;
@@ -168,9 +191,11 @@ h2 {
 .brands-padings {
     padding: 26px !important;
 }
-.gray-brands-title{
+
+.gray-brands-title {
     color: #5e5b5b;
 }
+
 h5 {
     font-family: "Lato black";
     /*letter-spacing: 0.3rem;*/
@@ -313,10 +338,11 @@ h5 {
 
 .newsletter-btn {
     right: -3px;
-    top: 1.95px;
+    top: 3.35px;
     max-width: 150px;
     margin-right: 5px;
 }
+
 
 .footer-links li {
     margin-top: 14px;
@@ -482,11 +508,15 @@ a:hover {
 }
 
 .gray-muted1 {
-    color: #706666;
+    color: #706666 !important;
 }
 
 .gray-muted2 {
-    color: #706666;
+    color: #706666 !important;
+}
+
+.text-blacks {
+    color: black !important;
 }
 
 .opacity-50 {
@@ -621,11 +651,29 @@ a:hover {
     background: rgba(0, 0, 0, 0.25);
 }
 
+.bg-imgess-bg {
+    width: 250px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.25);
+}
+
 .about-products-detials a {
     width: 250px;
     border-radius: 5px;
     height: 130px;
     margin: 7px;
+}
+
+.porducts-bg2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
 }
 
 .porducts-bg2 {
@@ -650,6 +698,7 @@ a:hover {
     border: 1px solid;
     padding: 6px;
     border-radius: 5px;
+    background: white;
 }
 
 .vander-serch-div input {
@@ -660,8 +709,13 @@ a:hover {
     cursor: pointer;
 }
 
+
 button:focus {
     outline: none;
+}
+
+.courier-widget img {
+    height: 52px;
 }
 
 .product-other-imges-slider .owl-nav .owl-prev {

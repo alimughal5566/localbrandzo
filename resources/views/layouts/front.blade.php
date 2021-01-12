@@ -82,12 +82,13 @@
 
 
     @yield('styles')
+{{--    <link rel="stylesheet" href="{{asset('assets/front/partical/css/style.css')}}">--}}
 
     <link rel="stylesheet" href="{{asset('assets/front/css/style2.css')}}">
 
 </head>
 
-<body>
+<body >
 
 @if($gs->is_loader == 1)
     <div class="preloader" id="preloader"
@@ -125,7 +126,7 @@
 @endif
 
 
-<section class="top-header">
+<section class="top-header  ">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 remove-padding">
@@ -236,7 +237,7 @@
 <!-- Top Header Area End -->
 
 <!-- Logo Header Area Start -->
-<section class="logo-header">
+<section class="logo-header " style="background: #EEEEEE">
     <div class="container">
         <div class="row ">
             <div class="col-lg-2 col-sm-6 col-5 remove-padding">
@@ -325,7 +326,7 @@
 <!-- Logo Header Area End -->
 
 <!--Main-Menu Area Start-->
-<div class="mainmenu-area mainmenu-bb">
+<div class="mainmenu-area mainmenu-bb" style="background: #EEEEEE;border-top: none !important;">
     <div class="container">
         <div class="row align-items-center mainmenu-area-innner">
             <div class="col-lg-3 col-md-6 categorimenu-wrapper remove-padding">
@@ -356,7 +357,7 @@
                                         </div>
 
                                     @else
-                                        <a href="{{ route('front.category',$category->slug) }}"><img src="{{ asset('assets/images/categories/'.$category->photo) }}"> {{ $category->name }}</a>
+                                        <a class="text-blacks" href="{{ route('front.category',$category->slug) }}"><img src="{{ asset('assets/images/categories/'.$category->photo) }}"> {{ $category->name }}</a>
 
                                     @endif
                                     @if(count($category->subs) > 0)
@@ -373,12 +374,12 @@
                                         <ul class="{{ $ck == 1 ? 'categories_mega_menu' : 'categories_mega_menu column_1' }}">
                                             @foreach($category->subs as $subcat)
                                                 <li>
-                                                    <a href="{{ route('front.subcat',['slug1' => $subcat->category->slug, 'slug2' => $subcat->slug]) }}">{{$subcat->name}}</a>
+                                                    <a class="text-blacks" href="{{ route('front.subcat',['slug1' => $subcat->category->slug, 'slug2' => $subcat->slug]) }}">{{$subcat->name}}</a>
                                                     @if(count($subcat->childs) > 0)
                                                         <div class="categorie_sub_menu">
                                                             <ul>
                                                                 @foreach($subcat->childs as $childcat)
-                                                                    <li><a href="{{ route('front.childcat',['slug1' => $childcat->subcategory->category->slug, 'slug2' => $childcat->subcategory->slug, 'slug3' => $childcat->slug]) }}">{{$childcat->name}}</a></li>
+                                                                    <li><a class="text-blacks" href="{{ route('front.childcat',['slug1' => $childcat->subcategory->category->slug, 'slug2' => $childcat->subcategory->slug, 'slug3' => $childcat->slug]) }}">{{$childcat->name}}</a></li>
                                                                 @endforeach
                                                             </ul>
                                                         </div>
@@ -1146,6 +1147,9 @@
 <!-- main -->
 <script src="{{asset('assets/front/js/main.js')}}"></script>
 <!-- custom -->
+<script src="{{asset('assets/front/partical/js/particles.js')}}"></script>
+<script src="{{asset('assets/front/partical/js/app.js')}}"></script>
+
 <script src="{{asset('assets/front/js/custom.js')}}"></script>
 
 {!! $seo->google_analytics !!}

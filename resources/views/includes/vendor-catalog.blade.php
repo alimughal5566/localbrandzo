@@ -1,26 +1,27 @@
         <div class="col-lg-3 col-md-6">
-          <div class="left-area">
+          <div class="left-area bg-black rounded">
             <div class="filter-result-area">
             <div class="header-area">
-              <h4 class="title">
-                {{$langg->lang61}}
-              </h4>
+                <h5 class="title text-uppercase mt-2 font-weight-bolder times-new-font2 text-white">
+                    {{$langg->lang61}}
+
+                </h5>
             </div>
-            <div class="body-area">
+            <div class="body-area mt-0 pt-0">
 
                 <ul class="filter-list">
                   @foreach ($categories as $element)
-                  <li>
+                  <li class="border-bottom my-1">
                     <div class="content">
-                        <a href="{{route('front.category', $element->slug)}}{{!empty(request()->input('search')) ? '?search='.request()->input('search') : ''}}" class="category-link"> <i class="fas fa-angle-double-right"></i> {{$element->name}}</a>
+                        <a class="text-white" href="{{route('front.category', $element->slug)}}{{!empty(request()->input('search')) ? '?search='.request()->input('search') : ''}}" class="category-link"> <h5>{{$element->name}}</h5></a>
                         @if(!empty($cat) && $cat->id == $element->id && !empty($cat->subs))
                             @foreach ($cat->subs as $key => $subelement)
                             <div class="sub-content open">
-                              <a href="{{route('front.category', [$cat->slug, $subelement->slug])}}{{!empty(request()->input('search')) ? '?search='.request()->input('search') : ''}}" class="subcategory-link"><i class="fas fa-angle-right"></i>{{$subelement->name}}</a>
+                              <a class="text-white" class="text-white" href="{{route('front.category', [$cat->slug, $subelement->slug])}}{{!empty(request()->input('search')) ? '?search='.request()->input('search') : ''}}" class="subcategory-link"><i class="fas fa-angle-right"></i>{{$subelement->name}}</a>
                               @if(!empty($subcat) && $subcat->id == $subelement->id && !empty($subcat->childs))
                                 @foreach ($subcat->childs as $key => $childcat)
                                 <div class="child-content open">
-                                  <a href="{{route('front.category', [$cat->slug, $subcat->slug, $childcat->slug])}}{{!empty(request()->input('search')) ? '?search='.request()->input('search') : ''}}" class="subcategory-link"><i class="fas fa-caret-right"></i>{{$childcat->name}}</a>
+                                  <a class="text-white" href="{{route('front.category', [$cat->slug, $subcat->slug, $childcat->slug])}}{{!empty(request()->input('search')) ? '?search='.request()->input('search') : ''}}" class="subcategory-link"><i class="fas fa-caret-right"></i>{{$childcat->name}}</a>
                                 </div>
                                 @endforeach
                               @endif
@@ -44,7 +45,7 @@
                   <div id="slider-range" class="price-filter-range" name="rangeInput"></div>
                   <div class="livecount">
                     <input type="number" min=0  name="min"  id="min_price" class="price-range-field" />
-                    <span>{{$langg->lang62}}</span>
+                    <span class="text-white">{{$langg->lang62}}</span>
                     <input type="number" min=0  name="max" id="max_price" class="price-range-field" />
                   </div>
                 </form>
@@ -58,7 +59,7 @@
 
               <div class="tags-area">
                 <div class="header-area">
-                  <h4 class="title">
+                  <h4 class="title ">
                       Filters
                   </h4>
                 </div>
@@ -149,19 +150,19 @@
 
             <div class="service-center">
               <div class="header-area">
-                <h4 class="title">
+                <h4 class="title  text-white">
                     {{ $langg->lang227 }}
                 </h4>
               </div>
-              <div class="body-area">
-                <ul class="list">
+              <div class="body-area mt-0 pt-0">
+                <ul class="list text-left">
                   <li>
-                      <a href="javascript:;" data-toggle="modal" data-target="{{ Auth::guard('web')->check() ? '#vendorform1' : '#comment-log-reg' }}">
+                      <a class="text-white" href="javascript:;" data-toggle="modal" data-target="{{ Auth::guard('web')->check() ? '#vendorform1' : '#comment-log-reg' }}">
                           <i class="icofont-email"></i> <span class="service-text">{{ $langg->lang228 }}</span>
                       </a>
                   </li>
                   <li>
-                        <a href="tel:+{{$vendor->shop_number}}">
+                        <a class="text-white"  href="tel:+{{$vendor->shop_number}}">
                           <i class="icofont-phone"></i> <span class="service-text">{{$vendor->shop_number}}</span>
                         </a>
                   </li>
@@ -170,7 +171,7 @@
               </div>
 
               <div class="footer-area">
-                <p class="title">
+                <p class="title text-white">
                   {{ $langg->lang229 }}
                 </p>
                 <ul class="list">

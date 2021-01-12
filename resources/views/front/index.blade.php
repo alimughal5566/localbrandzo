@@ -12,7 +12,7 @@
 
     @if($ps->slider == 1)
         <!-- Hero Area Start -->
-        <section class="hero-area">
+        <section class="hero-area mt-0">
             @if($ps->slider == 1)
 
                 @if(count($sliders))
@@ -130,7 +130,7 @@
                     <div class="baners-item-slider">
                             @foreach($top_small_banners as $img)
                                <div class="mx-2">
-                                   <a class="banner-effect p-2 rounded" href="{{ $img->link }}" target="_blank">
+                                   <a class=" p-2 rounded" href="{{ $img->link }}" target="_blank">
                                        <img src="{{asset('assets/images/banners/'.$img->photo)}}" class="rounded" alt="">
                                    </a>
                                </div>
@@ -249,7 +249,7 @@
                     @foreach($partners as $data)
                         <div class="col-lg-2 col-md-3 col-sm-6">
                             <a href="{{ $data->link }}" target="_blank" class=" mb-3 ">
-                                <div class="banner-effect text-center brands-padings feacture-links-height">
+                                <div class="banner-effect text-center brands-padings  feacture-links-height">
                                     <img src="{{ asset('assets/images/partner/'.$data->photo) }}" class="img-fluid" alt="">
                                 </div>
                                 <h5 class="text-center text-uppercase catagar gray-brands-title img-contant-width  mt-2 mb-3">{{$data->title }}</h5>
@@ -298,7 +298,7 @@
                      <div class="col-lg-6 remove-padding">
                          <div class="left">
                              <a class="" href="{{ $img->link }}" target="_blank">
-                                 <img src="{{asset('assets/images/porduct/'.$img->photo)}}" class="img-fluid" alt="">
+                                 <img src="{{asset('assets/images/bg-imges/'.$img->photo)}}" class="img-fluid" alt="">
                              </a>
                          </div>
                      </div>

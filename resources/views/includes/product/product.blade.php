@@ -1,7 +1,7 @@
-<div class="col-lg-4 col-md-4 col-6 remove-padding">
+<div class="col-lg-4 col-md-4 col-6  mb-2  remove-padding">
 
 
-		<a href="{{ route('front.product', $prod->slug) }}" class="item">
+		<a href="{{ route('front.product', $prod->slug) }}" class="item rounded shadow mx-2 ">
 			<div class="item-img">
 				@if(!empty($prod->features))
 				<div class="sell-area">

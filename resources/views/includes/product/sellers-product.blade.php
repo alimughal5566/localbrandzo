@@ -21,20 +21,20 @@
 																	<ul class="action-meta">
 																			<li>
 																					@if(Auth::guard('web')->check())
-														
+
 																					<span href="javascript:;" class="wish add-to-wish"
 																						data-href="{{ route('user-wishlist-add',$prod->id) }}" data-toggle="tooltip"
 																						data-placement="top" title="{{ $langg->lang54 }}"><i class="far fa-heart"></i>
 																					</span>
-														
+
 																					@else
-														
+
 																					<span href="javascript:;" class="wish" rel-toggle="tooltip" title="{{ $langg->lang54 }}"
 																						data-toggle="modal" id="wish-btn" data-target="#comment-log-reg"
 																						data-placement="top">
 																						<i class="far fa-heart"></i>
 																					</span>
-														
+
 																					@endif
 																			</li>
 																			<li>
@@ -49,7 +49,7 @@
 																					<i class="fas fa-random"></i>
 																				</span>
 																			</li>
-																		</ul>																	
+																		</ul>
 																</div>
 															</div>
 
@@ -58,7 +58,7 @@
 
                                 {{-- If This product belongs admin and apply this --}}
 
-								@else 
+								@else
 
 										<div class="single-box">
 											<div class="left-area">
@@ -77,20 +77,20 @@
 												<ul class="action-meta">
 														<li>
 																@if(Auth::guard('web')->check())
-									
+
 																<span href="javascript:;" class="wish add-to-wish"
 																	data-href="{{ route('user-wishlist-add',$prod->id) }}" data-toggle="tooltip"
 																	data-placement="top" title="{{ $langg->lang54 }}"><i class="far fa-heart"></i>
 																</span>
-									
+
 																@else
-									
+
 																<span href="javascript:;" class="wish" rel-toggle="tooltip" title="{{ $langg->lang54 }}"
 																	data-toggle="modal" id="wish-btn" data-target="#comment-log-reg"
 																	data-placement="top">
 																	<i class="far fa-heart"></i>
 																</span>
-									
+
 																@endif
 														</li>
 														<li>
@@ -105,7 +105,7 @@
 																<i class="fas fa-random"></i>
 															</span>
 														</li>
-													</ul>																	
+													</ul>
 											</div>
 										</div>
 

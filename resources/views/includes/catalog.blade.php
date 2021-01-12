@@ -1,63 +1,74 @@
-        <div class="col-lg-3 col-md-6">
-          <div class="left-area">
-            <div class="filter-result-area">
-            <div class="header-area">
-              <h4 class="title">
-                {{$langg->lang61}}
-              </h4>
+<div class="col-lg-3 col-md-6 ">
+    <div class="left-area bg-black rounded">
+        <div class="filter-result-area rounded">
+            <div class="header-area rounded">
+                <h5 class="text-uppercase mt-2 font-weight-bolder times-new-font2 text-white">
+                    Product Filters
+                    {{--                {{$langg->lang61}}--}}
+                </h5>
             </div>
-            <div class="body-area">
-              <form id="catalogForm" action="{{ route('front.category', [Request::route('category'), Request::route('subcategory'), Request::route('childcategory')]) }}" method="GET">
-                @if (!empty(request()->input('search')))
-                  <input type="hidden" name="search" value="{{ request()->input('search') }}">
-                @endif
-                @if (!empty(request()->input('sort')))
-                  <input type="hidden" name="sort" value="{{ request()->input('sort') }}">
-                @endif
-                <ul class="filter-list">
-                  @foreach ($categories as $element)
-                  <li>
-                    <div class="content">
-                        <a href="{{route('front.category', $element->slug)}}{{!empty(request()->input('search')) ? '?search='.request()->input('search') : ''}}" class="category-link"> <i class="fas fa-angle-double-right"></i> {{$element->name}}</a>
-                        @if(!empty($cat) && $cat->id == $element->id && !empty($cat->subs))
-                            @foreach ($cat->subs as $key => $subelement)
-                            <div class="sub-content open">
-                              <a href="{{route('front.category', [$cat->slug, $subelement->slug])}}{{!empty(request()->input('search')) ? '?search='.request()->input('search') : ''}}" class="subcategory-link"><i class="fas fa-angle-right"></i>{{$subelement->name}}</a>
-                              @if(!empty($subcat) && $subcat->id == $subelement->id && !empty($subcat->childs))
-                                @foreach ($subcat->childs as $key => $childcat)
-                                <div class="child-content open">
-                                  <a href="{{route('front.category', [$cat->slug, $subcat->slug, $childcat->slug])}}{{!empty(request()->input('search')) ? '?search='.request()->input('search') : ''}}" class="subcategory-link"><i class="fas fa-caret-right"></i> {{$childcat->name}}</a>
+            <div class="px-">
+                <form id="catalogForm"
+                      action="{{ route('front.category', [Request::route('category'), Request::route('subcategory'), Request::route('childcategory')]) }}"
+                      method="GET">
+                    @if (!empty(request()->input('search')))
+                        <input type="hidden" name="search" value="{{ request()->input('search') }}">
+                    @endif
+                    @if (!empty(request()->input('sort')))
+                        <input type="hidden" name="sort" value="{{ request()->input('sort') }}">
+                    @endif
+                    <ul  class="body-area cartagarya  pt-1">
+                        @foreach ($categories as $element)
+                            <li class="border-bottom my-1">
+                                <div class="content">
+                                    <a href="{{route('front.category', $element->slug)}}{{!empty(request()->input('search')) ? '?search='.request()->input('search') : ''}}"
+                                       class="category-link catagary-effect text-white ">  <h5>{{$element->name}}</h5>
+                                    </a>
+                                    @if(!empty($cat) && $cat->id == $element->id && !empty($cat->subs))
+                                        @foreach ($cat->subs as $key => $subelement)
+                                            <div class="sub-content open mb-1">
+                                                <a href="{{route('front.category', [$cat->slug, $subelement->slug])}}{{!empty(request()->input('search')) ? '?search='.request()->input('search') : ''}}"
+                                                   class="subcategory-link text-white"><i class="fas fa-angle-right"></i>{{$subelement->name}}</a>
+                                                @if(!empty($subcat) && $subcat->id == $subelement->id && !empty($subcat->childs))
+                                                    @foreach ($subcat->childs as $key => $childcat)
+                                                        <div class="child-content open">
+                                                            <a href="{{route('front.category', [$cat->slug, $subcat->slug, $childcat->slug])}}{{!empty(request()->input('search')) ? '?search='.request()->input('search') : ''}}"
+                                                               class="subcategory-link"><i
+                                                                        class="fas fa-caret-right"></i> {{$childcat->name}}
+                                                            </a>
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                            </div>
+                                        @endforeach
+
                                 </div>
-                                @endforeach
-                              @endif
-                            </div>
-                            @endforeach
-
-                          </div>
-                        @endif
+                                @endif
 
 
-                  </li>
-                  @endforeach
+                            </li>
+                        @endforeach
 
-                </ul>
-
-
-                <div class="price-range-block">
-                    <div id="slider-range" class="price-filter-range" name="rangeInput"></div>
-                    <div class="livecount">
-                      <input type="number" min=0  name="min"  id="min_price" class="price-range-field" />
-                      <span>{{$langg->lang62}}</span>
-                      <input type="number" min=0  name="max" id="max_price" class="price-range-field" />
+                    </ul>
+                    <div class="price-range-block px-2 mx-2">
+                        <div id="slider-range" class="price-filter-range" name="rangeInput"></div>
+                        <div class="livecount d-flex justify-content-around" id="price-range-slection">
+                            <input type="number" min=0 name="min" id="min_price"  class="price-range-field"/>
+                            <span class="text-white pt-1 mx-1" >{{$langg->lang62}}</span>
+                            <input type="number" min=0 name="max" id="max_price" class="price-range-field"/>
+                        </div>
                     </div>
-                  </div>
-
-                  <button class="filter-btn" type="submit">{{$langg->lang58}}</button>
-              </form>
+                    <div class="text-center py-3">
+                        <button class="filter-btn imgelikebtn font-weight-bold text-uppercase px-5 text-center" type="submit">{{$langg->lang58}}</button>
+                    </div>
+                </form>
             </div>
-            </div>
+        </div>
+    </div>
+</div>
 
 
+{{--
             @if ((!empty($cat) && !empty(json_decode($cat->attributes, true))) || (!empty($subcat) && !empty(json_decode($subcat->attributes, true))) || (!empty($childcat) && !empty(json_decode($childcat->attributes, true))))
 
               <div class="tags-area">
@@ -127,7 +138,7 @@
 
             @if(!isset($vendor))
 
-            {{-- <div class="tags-area">
+            --}}{{-- <div class="tags-area">
                 <div class="header-area">
                     <h4 class="title">
                         {{$langg->lang63}}
@@ -146,7 +157,7 @@
                       @endforeach
                     </ul>
                   </div>
-            </div> --}}
+            </div> --}}{{--
 
 
             @else
@@ -199,8 +210,6 @@
             </div>
 
 
-            @endif
+            @endif--}}
 
 
-          </div>
-        </div>

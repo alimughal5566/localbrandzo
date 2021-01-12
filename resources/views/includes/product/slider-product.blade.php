@@ -1,4 +1,4 @@
-<a href="{{ route('front.product', $prod->slug) }}" class="item border-0 mx-2">
+<a href="{{ route('front.product', $prod->slug) }}" class="item  mx-2">
 		<div class="item-img">
 			@if(!empty($prod->features))
 			<div class="sell-area">
@@ -12,9 +12,9 @@
 				src="{{ $prod->photo ? asset('assets/images/thumbnails/'.$prod->thumbnail):asset('assets/images/noimage.png') }}"
 				alt="">
 		</div>
-		<div class="info">
-			<h5 class="name">{{ $prod->showName() }}</h5>
-			<h4 class="price">{{ $prod->showPrice() }}
+		<div class="info bg-white ">
+			<h5 class="name text-blacks">{{ $prod->showName() }}</h5>
+			<h4 class="price text-blacks">{{ $prod->showPrice() }}
 				<del><small>{{ $prod->showPreviousPrice() }}</small></del></h4>
 			<div class="stars">
 				<div class="ratings">
