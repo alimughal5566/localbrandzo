@@ -619,7 +619,10 @@ a:hover {
     top: 0;
     width: 100%;
 }
-
+div#cart-items {
+    z-index: 999999;
+    border-radius: 4px;
+}
 .contact-wrap {
     height: 350px;
 }

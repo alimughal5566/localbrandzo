@@ -1,4 +1,4 @@
-<div class="col-lg-4 col-md-4 col-6  mb-2  remove-padding">
+<div class="col-lg-4 col-md-4 col-sm-6  mb-2  remove-padding">
 
 
 		<a href="{{ route('front.product', $prod->slug) }}" class="item rounded shadow mx-2 ">
@@ -27,21 +27,21 @@
 					<ul class="item-cart-options">
 						<li>
 								@if(Auth::guard('web')->check())
-	
+
 								<span href="javascript:;" class="add-to-wish"
 									data-href="{{ route('user-wishlist-add',$prod->id) }}" data-toggle="tooltip"
 									data-placement="top" title="{{ $langg->lang54 }}"><i
 										class="icofont-heart-alt"></i>
 								</span>
-	
+
 								@else
-	
+
 								<span href="javascript:;" rel-toggle="tooltip" title="{{ $langg->lang54 }}"
 									data-toggle="modal" id="wish-btn" data-target="#comment-log-reg"
 									data-placement="top">
 									<i class="icofont-heart-alt"></i>
 								</span>
-	
+
 								@endif
 						</li>
 						<li>
@@ -60,5 +60,5 @@
 				</div>
 			</div>
 		</a>
-	
+
 	</div>

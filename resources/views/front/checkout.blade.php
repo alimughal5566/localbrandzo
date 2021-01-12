@@ -314,7 +314,7 @@
 																<h5 class="label">{{ $langg->lang755 }} : </h5>
 																<span class="qttotal">{{ $product['qty'] }} </span>
 															</div>
-															<div class="total-price">
+															<div class="total-price mt-1">
 																<h5 class="label">{{ $langg->lang756 }} : </h5>
 																<p>{{ App\Models\Product::convertPrice($product['price']) }}
 																</p>

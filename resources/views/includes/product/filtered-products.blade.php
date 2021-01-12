@@ -1,6 +1,6 @@
 @if (count($prods) > 0)
 	@foreach ($prods as $key => $prod)
-				<div class="col-lg-4 col-md-4 col-6 mb-2 remove-padding">
+				<div class="col-lg-4 col-md-4 col-sm-6 mb-2 remove-padding">
 
                     <a href="{{ route('front.product', $prod->slug) }}" class="item rounded shadow mx-2 ">
                         <div class="item-img">
